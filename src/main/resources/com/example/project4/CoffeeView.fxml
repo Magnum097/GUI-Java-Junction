@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="445.0" style="-fx-background-color: tan;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project4.CoffeeController">
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="171.0" text="ORDERING COFFEE" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="17.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@orderingCoffee.jpg" />
+         </image>
+         <BorderPane.margin>
+            <Insets bottom="250.0" right="80.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </center>
+   <left>
+      <GridPane maxHeight="-Infinity" prefHeight="148.0" prefWidth="211.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="127.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="73.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets left="40.0" top="100.0" />
+         </BorderPane.margin>
+         <children>
+            <CheckBox fx:id="cream" mnemonicParsing="false" onAction="#subTotalLiveUpdate" text="Cream">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="syrup" mnemonicParsing="false" onAction="#subTotalLiveUpdate" text="Syrup" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="milk" mnemonicParsing="false" onAction="#subTotalLiveUpdate" text="Milk" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="caramel" mnemonicParsing="false" onAction="#subTotalLiveUpdate" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="whippedCream" mnemonicParsing="false" onAction="#subTotalLiveUpdate" text="Whipped Cream" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </GridPane>
+   </left>
+   <right>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="189.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="coffeeSize" layoutX="15.0" layoutY="2.0" onAction="#subTotalLiveUpdate" prefHeight="25.0" prefWidth="130.0" />
+                  <ComboBox fx:id="coffeeNum" layoutX="15.0" layoutY="42.0" onAction="#subTotalLiveUpdate" prefHeight="25.0" prefWidth="130.0" />
+                  <TextField fx:id="coffeeSubtotal" editable="false" layoutX="30.0" layoutY="95.0" onAction="#subTotalLiveUpdate" prefHeight="25.0" prefWidth="110.0" promptText="subtotal" />
+                  <Label layoutX="20.0" layoutY="98.0" text="\$">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="button_addToOrder" mnemonicParsing="false" onAction="#addToOrder" prefHeight="27.0" prefWidth="119.0" text="Add to Order">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets top="160.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>

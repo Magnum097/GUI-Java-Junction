@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="445.0" style="-fx-background-color: lemonchiffon;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project4.DonutController">
+   <top>
+      <Label text="ORDERING DONUT" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="17.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <GridPane prefHeight="355.0" prefWidth="398.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="152.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="111.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="182.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="217.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="donutType" onAction="#displayImage" prefWidth="150.0">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <ListView fx:id="flavors" prefHeight="221.0" prefWidth="98.0" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" top="30.0" />
+               </GridPane.margin>
+            </ListView>
+            <ListView fx:id="donutOrder" prefHeight="191.0" prefWidth="153.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="20.0" top="30.0" />
+               </GridPane.margin>
+            </ListView>
+            <Label alignment="CENTER" text="sub-total" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="95.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="button_addToOrder" mnemonicParsing="false" onAction="#ctrl_addToOrder" prefHeight="25.0" prefWidth="113.0" text="Add to Order" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <ComboBox fx:id="donutNum" prefHeight="25.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <Button fx:id="button_addDonut" mnemonicParsing="false" onAction="#ctrl_addDonut" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="110.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_removeDonut" mnemonicParsing="false" onAction="#ctrl_removeDonut" text="&lt;&lt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="150.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="donutImage" fitHeight="105.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+               <image>
+                  <Image url="@yeastdonut.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="donutSubtotal" layoutX="18.0" layoutY="32.0" onAction="#subTotalLiveUpdate" prefHeight="14.0" prefWidth="80.0" />
+                  <Label layoutX="8.0" layoutY="34.0" text="\$">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
